@@ -19,7 +19,7 @@
 
 ---
 
-🧱 알고리즘 구조
+## 🧱 알고리즘 구조
 <img width="996" height="146" alt="image" src="https://github.com/user-attachments/assets/b7075bee-dbe2-44e6-a6d3-5dffd64cd745" />
 
 ---
