@@ -35,41 +35,43 @@
 
 ### 1️⃣ 실행결과를 저장할 CSV 파일 생성
 
-<img width="607" height="297" alt="1" src="https://github.com/user-attachments/assets/80a76f99-b3d4-4484-88cd-381427777d88" />
-
 - 추천 결과의 노출 데이터를 구조화하여 저장하기 위한 파일 생성
+
+<img width="607" height="297" alt="1" src="https://github.com/user-attachments/assets/80a76f99-b3d4-4484-88cd-381427777d88" />
 
 ### 2️⃣ 시크릿 모드 활용
 
 - 구독/시청 기록이 유튜브 환경에 영향을 미치지 않도록 시크릿 모드 사용  
-- 중복되지 않는 다양한 콘텐츠 제공 가능  
+- 개인화 요소를 제거하여 플랫폼 기본 추천 로직에 의해 노출되는 콘텐츠만 관찰
+- 사용자 이력 편향 없이 동일 조건의 추천 노출 환경 구성
 
 <img width="543" height="365" alt="2" src="https://github.com/user-attachments/assets/ee51b134-4a4d-45d9-9df4-3a653d6008e9" />
 
-### 3️⃣ 크롤링으로 유튜브 동영상 제목 수집
+### 3️⃣ 초기 화면 크롤링을 통한 추천 노출 콘텐츠 수집
 
-- 초기 화면 20회 새로고침하며 영상 제목 수집  
+- 시크릿 모드 초기 화면에서 사용자에게 우선적으로 노출되는 동영상 제목 수집
+- 새로고침 20회를 통해 노출 빈도 기반 추천 경향 분석을 위한 데이터 확보
 - `find`와 `get_text`를 이용해 원하는 제목만 텍스트로 추출
 
 <img width="740" height="460" alt="3" src="https://github.com/user-attachments/assets/8eb25827-b979-409b-b2b5-765edab31b43" />
 
 
-### 4️⃣ 상위 10개 키워드 추출
-
-- KRWordRank를 사용하여 의미 없는 키워드 제외  
+### 4️⃣ 상위 10개 키워드 추출 (노출 컨텐츠 기반)
+- 노출된 동영상 제목을 대상으로 추천 시스템이 강조하는 핵심 주제 키워드 도출
+- KRWordRank를 사용하여 의미 없는 키워드 제거 및 대표 키워드 선정
 - 조건에 맞는 빈도수 높은 상위 10개 키워드 추출  
 <img width="658" height="224" alt="4" src="https://github.com/user-attachments/assets/3717a30e-94dc-4afe-a002-c80a4f4eb93c" />
 
 
-### 5️⃣ 댓글 크롤링
+### 5️⃣ 키워드 기반 추천 탐색
 
 - 상위 10개 키워드 검색 후 댓글 수집  
-- 실시간 스트리밍 영상 제외 (도배성 댓글 방지)  
+- 실시간 스트리밍 영상 제외하여 추천 왜곡 가능성 제거
 - 댓글 텍스트 형태로 저장  
 
 ### 6️⃣ 댓글 기반 추가 키워드 추출
 
-- 저장된 댓글을 사용하여 다시 상위 10개 키워드 추출  
+- 추천 노출된 영상의 댓글을 분석하여 콘텐츠 소비 반응 기반의 2차 키워드 도출
 - KRWordRank 활용  
 
 <img width="855" height="254" alt="6" src="https://github.com/user-attachments/assets/d0379181-8cbd-4a24-9b0f-d6f65c2bc1e1" />
