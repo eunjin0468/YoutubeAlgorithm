@@ -36,6 +36,7 @@
 ### 1️⃣ 실행결과를 저장할 CSV 파일 생성
 
 <img width="607" height="297" alt="1" src="https://github.com/user-attachments/assets/80a76f99-b3d4-4484-88cd-381427777d88" />
+
 - 추천 결과의 노출 데이터를 구조화하여 저장하기 위한 파일 생성
 
 ### 2️⃣ 시크릿 모드 활용
